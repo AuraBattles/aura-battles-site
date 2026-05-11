@@ -1,0 +1,384 @@
+<html>
+<head>
+  <style>
+    body {
+      background: linear-gradient(123deg, #0f0f0f, #1a0000, #000814);
+      margin: 0;
+      font-family: Georgia, serif;
+      text-align: center;
+}
+
+    .Greeting {
+      color: red;
+      font-size: 50px;
+      margin-top: 0;
+      text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+}
+
+    .AuraBattlesImage {
+      display: block;
+      margin: auto;
+      width: 300px;
+      height: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.25);
+}
+
+    .Owner, .Admins, .TopPlayers {
+      color: white;
+      font-size: 70px;
+      margin: 40px 0 20px;
+}
+
+    .Owner {
+      text-shadow: -2px -2px 0 blue, 2px -2px 0 blue, -2px 2px 0 blue, 2px 2px 0 blue;
+}
+
+    .Admins {
+      text-shadow: -2px -2px 0 red, 2px -2px 0 red, -2px 2px 0 red, 2px 2px 0 red;
+}
+
+    .TopPlayers {
+      text-shadow: -2px -2px 0 yellow, 2px -2px 0 yellow, -2px 2px 0 yellow, 2px 2px 0 yellow;
+}
+
+    .Card {
+      background: linear-gradient(to bottom, #1f1f1f, #151515);
+
+      width: 600px;
+
+      margin: 30px auto;
+
+      padding: 20px;
+
+      border-radius: 15px;
+
+      border: 2px solid #009dff;
+
+      box-shadow: 0 0 20px rgba(0,157,255,0.5);
+
+      transition: transform 0.3s;
+}
+
+    .Card:hover {
+      transform: scale(1.03);
+}
+
+    .CardAdmin1 {
+      background: linear-gradient(to bottom, #1f1f1f, #151515);
+      width: 100px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 15px;
+      border: 2px solid red;
+      box-shadow: 0 0 20px rgba(255,0,0,0.5);
+      transition: transform 0.3s;
+}
+
+    .OwnerName {
+      color: white;
+
+      font-size: 55px;
+
+      font-weight: bold;
+
+      margin: 0 0 15px;
+
+      letter-spacing: 2px;
+
+      text-shadow:
+       0 0 10px rgba(0,150,255,0.8),
+       0 0 20px rgba(0,150,255,0.6),
+       0 0 35px rgba(0,150,255,0.4);
+}
+
+    .OwnerPic {
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+    .Description {
+      font-weight: bold;
+      color: white;
+      margin-top: 15px;
+}
+     .OwnerButton {
+       background: linear-gradient(to right, #009dff, #0044ff);
+
+       color: white;
+
+       font-size: 22px;
+
+       font-weight: bold;
+
+       border: none;
+
+       border-radius: 12px;
+
+       padding: 12px 30px;
+
+       cursor: pointer;
+
+       margin-top: 15px;
+
+       box-shadow: 0 0 15px rgba(0,157,255,0.5);
+
+       transition: 0.3s;
+}
+
+    .OwnerButton:hover {
+       transform: scale(1.08);
+
+       background: linear-gradient(to right, #33b5ff, #3366ff);
+
+       box-shadow: 0 0 25px rgba(0,157,255,0.8);
+}
+
+     .VisitButton {
+       background: linear-gradient(to right, #ff0000, #990000);
+
+       color: white;
+
+       font-size: 22px;
+
+       font-weight: bold;
+
+       border: none;
+
+       border-radius: 12px;
+
+       padding: 12px 30px;
+
+       cursor: pointer;
+
+       margin-top: 15px;
+
+       box-shadow: 0 0 15px rgba(255,0,0,0.5);
+
+       transition: 0.3s;
+}
+
+    .VisitButton:hover {
+     transform: scale(1.08);
+
+     background: linear-gradient(to right, #ff3333, #cc0000);
+
+     box-shadow: 0 0 25px rgba(255,0,0,0.8);
+}
+
+
+    .AdminContainer {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 25px;
+
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+}
+
+    .AdminCard {
+      background: linear-gradient(to bottom, #1f1f1f, #151515);
+
+      width: 220px;
+
+      padding: 20px;
+
+      border-radius: 15px;
+
+      border: 2px solid red;
+
+      box-shadow: 0 0 15px rgba(255,0,0,0.4);
+
+      transition: 0.3s;
+}
+
+    .AdminCard:hover {
+      transform: scale(1.05);
+}
+
+    .AdminName {
+      color: white;
+
+      font-size: 35px;
+
+      font-weight: bold;
+
+      margin-bottom: 15px;
+
+      text-shadow:
+      0 0 10px rgba(255,0,0,0.8);
+
+      letter-spacing: 1px;
+}
+
+    .PlayerContainer {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 25px;
+
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+}
+
+    .PlayerCard {
+      background: linear-gradient(to bottom, #1f1f1f, #151515);
+
+      width: 220px;
+
+      padding: 20px;
+
+      border-radius: 15px;
+
+      border: 2px solid gold;
+
+      box-shadow: 0 0 20px rgba(255,215,0,0.5);
+
+      transition: 0.3s;
+}
+
+    .PlayerCard:hover {
+      transform: scale(1.05);
+}
+
+    .PlayerName {
+      color: white;
+
+      font-size: 35px;
+
+      font-weight: bold;
+
+      margin-bottom: 15px;
+
+      letter-spacing: 1px;
+
+      text-shadow:
+      0 0 10px rgba(255,215,0,0.9),
+      0 0 20px rgba(255,215,0,0.6);
+}
+
+    .PlayerButton {
+      background: linear-gradient(to right, #ffd700, #b8860b);
+
+      color: white;
+
+      font-size: 22px;
+
+      font-weight: bold;
+
+      border: none;
+
+      border-radius: 12px;
+
+      padding: 12px 30px;
+
+      cursor: pointer;
+
+      margin-top: 15px;
+
+      box-shadow: 0 0 15px rgba(255,215,0,0.5);
+
+      transition: 0.3s;
+}
+
+    .PlayerButton:hover {
+      transform: scale(1.08);
+
+      background: linear-gradient(to right, #ffe44d, #d4a017);
+
+      box-shadow: 0 0 25px rgba(255,215,0,0.8);
+}
+
+  </style>
+</head>
+
+<body>
+
+  <p class="Greeting">Aura Battles</p>
+
+  <img class="AuraBattlesImage" src="https://tr.rbxcdn.com/180DAY-5c8d6ca050a432beb1f14216ab1b81f9/256/256/Image/Webp/noFilter">
+
+  <p class="Owner">Owner</p>
+
+  <div class="Card">
+    <p class="OwnerName">CCA</p>
+    <img class="OwnerPic" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B714773BC0E8A9BEE8CB491EA9D4A82D-Png/150/150/AvatarHeadshot/Webp/noFilter">
+    <p class="Description">The owner of Aura Battles</p>
+    <a href="https://www.roblox.com/users/2373107622/profile" target="_blank">
+    <button class="OwnerButton">Visit</button>
+    </a>
+   </div>
+
+  <p class="Admins">Admins</p>
+
+ <div class="AdminContainer">
+
+  <div class="AdminCard">
+    <p class="AdminName">Space</p>
+    <img class="AdminPic" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-F345A09114337D714A7E9DAF9D9C69C5-Png/150/150/AvatarHeadshot/Webp/noFilter">
+    <br><br>
+
+ <a href="https://www.roblox.com/users/2704722103/profile" target="_blank">
+  <button class="VisitButton">Visit</button>
+ </a>
+   </div>
+
+  <div class="AdminCard">
+    <p class="AdminName">Nikelele</p>
+    <img class="AdminPic" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-285B66ECA59774D44CD1C6CA7351498C-Png/150/150/AvatarHeadshot/Webp/noFilter">
+    <br><br>
+
+ <a href="https://www.roblox.com/users/299755076/profile" target="_blank">
+  <button class="VisitButton">Visit</button>
+ </a>
+  </div>
+
+  <div class="AdminCard">
+    <p class="AdminName">Noa</p>
+    <img class="AdminPic" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B93E38D49BA1AFC4817BA89CECD016AF-Png/150/150/AvatarHeadshot/Webp/noFilter">
+   <br><br>
+
+ <a href="https://www.roblox.com/users/8323241263/profile" target="_blank">
+  <button class="VisitButton">Visit</button>
+ </a>
+  </div>
+
+</div>
+
+   <p class = "TopPlayers">Top Players</p>
+
+<div class="PlayerContainer">
+
+  <div class="PlayerCard">
+    <p class="PlayerName">Varlixor</p>
+
+    <img class="AdminPic" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-4AA07EE8F2FAB6243B48B219D2DA1F37-Png/150/150/AvatarHeadshot/Webp/noFilter">
+
+    <br><br>
+
+    <a href="https://www.roblox.com/users/6117412818/profile" target="_blank">
+      <button class="PlayerButton">Visit</button>
+    </a>
+  </div>
+
+  <div class="PlayerCard">
+    <p class="PlayerName">Idle</p>
+
+    <img class="AdminPic" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-75B38F7131C1403A2CFF812CF099AC5F-Png/150/150/AvatarHeadshot/Webp/noFilter">
+
+    <br><br>
+
+    <a href="https://www.roblox.com/users/2507700956/profile" target="_blank">
+      <button class="PlayerButton">Visit</button>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
