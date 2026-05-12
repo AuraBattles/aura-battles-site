@@ -24,7 +24,7 @@
       box-shadow: 0 0 20px rgba(255,255,255,0.25);
 }
 
-    .Owner, .Admins, .TopPlayers {
+    .Owner, .Admins, .TopPlayers, .Auras, .CommonAuras, .RareAuras, .LegendaryAuras {
       color: white;
       font-size: 70px;
       margin: 40px 0 20px;
@@ -32,15 +32,38 @@
 
     .Owner {
       text-shadow: -2px -2px 0 blue, 2px -2px 0 blue, -2px 2px 0 blue, 2px 2px 0 blue;
+      margin-top: 100px;
 }
 
     .Admins {
       text-shadow: -2px -2px 0 red, 2px -2px 0 red, -2px 2px 0 red, 2px 2px 0 red;
+      margin-top: 100px;
 }
 
     .TopPlayers {
       text-shadow: -2px -2px 0 yellow, 2px -2px 0 yellow, -2px 2px 0 yellow, 2px 2px 0 yellow;
+      margin-top: 100px;
 }
+
+    .Auras {
+      text-shadow: -2px -2px 0 purple, 2px -2px 0 purple, -2px 2px 0 yellow, 2px 2px 0 purple;
+      margin-top: 100px;
+}
+
+    .CommonAuras {
+      text-shadow: -2px -2px 0 green, 2px -2px 0 green, -2px 2px 0 green, 2px 2px 0 green;
+      margin-top: 100px;
+}
+
+    .RareAuras {
+      text-shadow: -2px -2px 0 cyan, 2px -2px 0 cyan, -2px 2px 0 cyan, 2px 2px 0 cyan;
+      margin-top: 100px;
+}
+
+    .LegendaryAuras {
+      text-shadow: -2px -2px 0 yellow, 2px -2px 0 yellow, -2px 2px 0 yellow, 2px 2px 0 yellow;
+      margin-top: 100px;
+}    
 
     .Card {
       background: linear-gradient(to bottom, #1f1f1f, #151515);
@@ -64,17 +87,6 @@
       transform: scale(1.03);
 }
 
-    .CardAdmin1 {
-      background: linear-gradient(to bottom, #1f1f1f, #151515);
-      width: 100px;
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 15px;
-      border: 2px solid red;
-      box-shadow: 0 0 20px rgba(255,0,0,0.5);
-      transition: transform 0.3s;
-}
-
     .OwnerName {
       color: white;
 
@@ -95,6 +107,14 @@
     .OwnerPic {
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+    .AdminPic {
+      width: 120px;
+      height: 120px;
+
+      object-fit: cover;
+      border-radius: 12px;
 }
 
     .Description {
@@ -294,6 +314,135 @@
       box-shadow: 0 0 25px rgba(255,215,0,0.8);
 }
 
+    .AuraContainer {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
+    .AuraCard {
+      background: linear-gradient(to bottom, #1f1f1f, #151515);
+
+      width: 220px;
+
+      padding: 20px;
+
+      border-radius: 15px;
+
+      border: 2px solid limegreen;
+
+      box-shadow: 0 0 20px rgba(50,205,50,0.5);
+
+      transition: 0.3s;
+}
+
+    .AuraCard:hover {
+      transform: scale(1.05);
+}
+
+    .AuraName {
+      color: white;
+
+      font-size: 32px;
+
+      font-weight: bold;
+  
+      margin-bottom: 15px;
+
+      letter-spacing: 1px;
+
+      text-shadow:
+      0 0 10px rgba(50,205,50,0.9),
+      0 0 20px rgba(50,205,50,0.6);
+    
+      min-height: 80px;
+}
+
+    .AuraRarity {
+      color: limegreen;
+
+      font-size: 20px;
+
+      font-weight: bold;
+  
+      margin-top: 15px;
+}
+
+    .AuraPic {
+      width: 120px;
+      height: 120px;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      box-shadow: 0 0 15px rgba(50,205,50,0.4);
+}
+
+    .RareCard {
+      border: 2px solid cyan;
+
+      box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+    .RareCard:hover {
+      transform: scale(1.05);
+
+      box-shadow: 0 0 35px rgba(0,255,255,0.8);
+}
+
+    .RareName {
+      color: white;
+
+      font-size: 32px;
+   
+      font-weight: bold;
+
+      margin-bottom: 15px;
+
+      letter-spacing: 1px;
+
+      text-shadow:
+      0 0 10px rgba(0,255,255,0.9),
+      0 0 20px rgba(0,255,255,0.6);
+
+      min-height: 80px;
+}
+
+    .RareRarity {
+      color: cyan;
+
+      font-size: 20px;
+
+      font-weight: bold;
+    
+      margin-top: 15px;
+
+      text-shadow:
+      0 0 10px rgba(0,255,255,0.8);
+}
+
+   html {
+    scroll-behavior: smooth;
+}
+
+    .Divider {
+      width: 900px;
+      height: 3px;
+
+      margin: 100px auto;
+      border-radius: 10px;
+   
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
   </style>
 </head>
 
@@ -303,7 +452,11 @@
 
   <img class="AuraBattlesImage" src="https://tr.rbxcdn.com/180DAY-5c8d6ca050a432beb1f14216ab1b81f9/256/256/Image/Webp/noFilter">
 
+  <div class = "Divider"></div>
+
   <p class="Owner">Owner</p>
+
+  <div class = "Divider"></div>
 
   <div class="Card">
     <p class="OwnerName">CCA</p>
@@ -314,7 +467,11 @@
     </a>
    </div>
 
+  <div class = "Divider"></div>
+
   <p class="Admins">Admins</p>
+
+  <div class = "Divider"></div>
 
  <div class="AdminContainer">
 
@@ -350,7 +507,11 @@
 
 </div>
 
-   <p class = "TopPlayers">Top Players</p>
+  <div class = "Divider"></div>
+
+  <p class = "TopPlayers">Top Players</p>
+
+  <div class = "Divider"></div>
 
 <div class="PlayerContainer">
 
@@ -379,6 +540,198 @@
   </div>
 
 </div>
+
+  <div class = "Divider"></div>
+
+  <p class = "Auras">Auras</p>
+
+  <div class = "Divider"></div>
+
+  <p class = "CommonAuras">Common</p>
+
+  <div class="AuraContainer">
+
+  <div class="AuraCard">
+    <p class="AuraName">Wind</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503469720999956612/file_000000009fb871fdb8c4d90eb651011a.png?ex=6a0376ca&is=6a02254a&hm=500892db45be2b16cd3eb3a0b140e19efd2222d3440b1de2f2294943327cda9f&=&format=webp&quality=lossless&width=465&height=465">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Time</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503550976290852966/file_00000000114471f49059c98904c15158.png?ex=6a03c277&is=6a0270f7&hm=ea715cc3a74129ce5c3cd4a22cdd4b20d0c9368c3cc0590f057b5786f549a9ea&=&format=webp&quality=lossless&width=465&height=465">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Tar</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503550976672403566/file_000000003fe071f49117c548d4d980dc.png?ex=6a03c277&is=6a0270f7&hm=8ab450fd2a46258fe2155ad722f5dffdd6b2a78041bbc787c4f502a4f8696089&=&format=webp&quality=lossless&width=465&height=465">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Power</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503550181684023366/ChatGPT_Image_May_12_2026_03_11_11_AM.png?ex=6a03c1b9&is=6a027039&hm=f981b702019b13648bbeae3b6f4f8738972095f0055048f0013d5e96f6c207bf&=&format=webp&quality=lossless&width=569&height=569">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Poison</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503551474712576020/file_00000000b73471f4a6f38e9dc9e8a546.png?ex=6a03c2ee&is=6a02716e&hm=c748dd9ef2c4434873f1c0051c346f3f53c8403cd0c4113099460aed9826e430&=&format=webp&quality=lossless&width=465&height=465">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Metal</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503551475421286410/file_00000000b10471f4be7d4a4dd4df4de2.png?ex=6a03c2ee&is=6a02716e&hm=8a962b89997816453fa6d62d54fb066176bd16884f038683a4cbdd21d64288c9&=&format=webp&quality=lossless&width=465&height=465">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Electro Surge</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503450636484739132/file_00000000478071fda0f26dcd035c420a.png?ex=6a036504&is=6a021384&hm=a24e0bb4917aa17a6c84bc52e7c579fdb2452e31d62c1e77ceabf5fc9496c43a&=&format=webp&quality=lossless&width=569&height=569">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">High Gravity</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503554113890156614/file_0000000025a471f480c0de5e813cb11b.png?ex=6a03c563&is=6a0273e3&hm=94f118aa74b1ccfb91e67d9cb37197835f3f2c0e547b2b1e6e08752f6086d118&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Healing</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503554114347602040/file_000000009880720ab81f8a1a4dfe836b.png?ex=6a03c563&is=6a0273e3&hm=9ff42324231510d87d821dc38267fe2e2633fb8db2b61c2219ca0b2d3596539f&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Filthy</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503554114775158844/file_000000001b0471f49c3a2d480352c7e6.png?ex=6a03c563&is=6a0273e3&hm=50a345d1893c827748b21b56a5d0ca280b0c21cf1309d472a394f1acf62f82db&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Crystal</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503554115194720436/file_00000000162471f48833f17a92f1872e.png?ex=6a03c563&is=6a0273e3&hm=920d838a47601b78651800f1ce3950e65f1fce719d8d76762ed3f4080b6a0fef&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+  <div class="AuraCard">
+    <p class="AuraName">Adrenaline</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503554115635118080/file_000000004dd071f49d2f24c74a8dbb0a.png?ex=6a03c563&is=6a0273e3&hm=c0dea0fa94d0e8104b100783fb8b92ebc65330c1134c69e47d7b529791b40f4f&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="AuraRarity">Common</p>
+  </div>
+
+</div>
+
+  <div class = "Divider"></div>
+
+  <p class = "Rare">Rare</p>
+
+  <div class="AuraContainer">
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Vanisher</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575509185859595/file_00000000400471f4aad41705d05e1bbb.png?ex=6a03d950&is=6a0287d0&hm=c71b9b85ceb9c7a3b8dc4faa4036e38161841198f256da2ffa5616f26374a0a0&=&format=webp&quality=lossless&width=576&height=576">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Vampire</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575401639710813/file_000000000b1c71f4b0611130bda9c9d8.png?ex=6a03d936&is=6a0287b6&hm=87fabb38f6bd67abc3c63eb700fc96cd4e8b4ee58b5d5258183d4324175af9c7&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Tank</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575403078619227/file_0000000030e071f4b73c69b9afebf7f9.png?ex=6a03d937&is=6a0287b7&hm=d865dab2f32aecfdf28c084c713ab94fbd0d8f3b14babb9dc3ff16f54904ceb5&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Speed</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575403078619227/file_0000000030e071f4b73c69b9afebf7f9.png?ex=6a03d937&is=6a0287b7&hm=d865dab2f32aecfdf28c084c713ab94fbd0d8f3b14babb9dc3ff16f54904ceb5&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Soul</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575406253707345/file_00000000c2b47243be2fe0f6f6d33d55.png?ex=6a03d937&is=6a0287b7&hm=76a9339d9328c15b8791dfb5e72ccb6130f33841cc06882c07dd587b660ad2ca&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Ragebait</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575406668681326/file_00000000ac3471f4b22d1261a0b8cfb7.png?ex=6a03d938&is=6a0287b8&hm=20a00d053ea6caf1124ed753447c0711a36a9d8c52a61477c3b74fce8354a964&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Love</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575407260340264/file_000000006fe0720a9f72c52e811fe3a6.png?ex=6a03d938&is=6a0287b8&hm=e021e9a6cc71976ca6ce0e08c6db4d1feea997a039d59565119e1ac608a400d9&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Jumper</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575407880966164/file_00000000c80c71f4890589b60decc773.png?ex=6a03d938&is=6a0287b8&hm=7685797a406676d4bace3f89b15a7693ed345dc5c28e6f2c86a12e09ee84d9af&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Graffiti</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575409126801518/file_000000000c9c72438926171b2d71fd50.png?ex=6a03d938&is=6a0287b8&hm=087dc3923a7d4a6ef75e82b53158075d76786cdd365f064bd00694e87df5bb2e&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Frostbite</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575409592373349/file_000000009a28720a9fd3947074d47b1a.png?ex=6a03d938&is=6a0287b8&hm=a06988fc0bfe14b7d55631f638cc88a868ce7662ff20cb96994696fc1a046d70&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Fireblast</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575492576415845/file_000000000014724386a055f4fc02831f.png?ex=6a03d94c&is=6a0287cc&hm=f1400bf9809f149b5d1be6fdac9bb97e5f51440b9aeed47bf4b0b8247527089f&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Explosive</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575493025464420/file_000000006784720ab32fc25c4f231232.png?ex=6a03d94c&is=6a0287cc&hm=39ff3276589ae5fa2b1c268fdb59e076d9db7f761e1e99b8b1b364b7858ecf75&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Energizer</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575493495095477/file_00000000eb40720a899c8fe5b0436c13.png?ex=6a03d94c&is=6a0287cc&hm=633de61db5cd7c5e71d4d214203a9c40db23f7d5521fdf48e09dfe7c3355dcb5&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Crimson Surge</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575493926981722/file_000000007124724685aba1f81c0dde73.png?ex=6a03d94c&is=6a0287cc&hm=be7aee4eb445fa3d0c00f82dc5a224e0f175f6a813afa6e48a285d41b192b6de&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Crimson Lightning</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575494338281502/file_000000009e24720aa357a31a509a4a2c.png?ex=6a03d94c&is=6a0287cc&hm=62a6e20cb540324941af125aef64c2cb17fc870e56eb34958718911b17257d88&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+  <div class="AuraCard RareCard">
+    <p class="RareName">Chained</p>
+    <img class="AuraPic" src="https://media.discordapp.net/attachments/1486702403062468661/1503575494782750780/file_00000000bb7071f4bf6b9e8b51d8acb2.png?ex=6a03d94d&is=6a0287cd&hm=2b38ab2ab1cfaab7f54ba24c93550de2d9c2f918332aefc264ec0fd5737ff671&=&format=webp&quality=lossless&width=482&height=482">
+    <p class="RareRarity">Rare</p>
+  </div>
+
+</div>
+
+  <div class = "Divider"></div>
+
+  <p class = "LegendaryAuras">Legendary</p>
 
 </body>
 </html>
